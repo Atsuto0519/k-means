@@ -1,0 +1,2508 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%Title: k-means.eps
+%%Creator: matplotlib version 2.1.0, http://matplotlib.org/
+%%CreationDate: Sat Feb 10 15:49:47 2018
+%%Orientation: portrait
+%%BoundingBox: 75 223 536 568
+%%EndComments
+%%BeginProlog
+/mpldict 8 dict def
+mpldict begin
+/m { moveto } bind def
+/l { lineto } bind def
+/r { rlineto } bind def
+/c { curveto } bind def
+/cl { closepath } bind def
+/box {
+m
+1 index 0 r
+0 exch r
+neg 0 r
+cl
+} bind def
+/clipbox {
+box
+clip
+newpath
+} bind def
+%!PS-Adobe-3.0 Resource-Font
+%%Title: DejaVu Sans
+%%Copyright: Copyright (c) 2003 by Bitstream, Inc. All Rights Reserved. Copyright (c) 2006 by Tavmjong Bah. All Rights Reserved. DejaVu changes are in public domain 
+%%Creator: Converted from TrueType to type 3 by PPR
+25 dict begin
+/_d{bind def}bind def
+/_m{moveto}_d
+/_l{lineto}_d
+/_cl{closepath eofill}_d
+/_c{curveto}_d
+/_sc{7 -1 roll{setcachedevice}{pop pop pop pop pop pop}ifelse}_d
+/_e{exec}_d
+/FontName /DejaVuSans def
+/PaintType 0 def
+/FontMatrix[.001 0 0 .001 0 0]def
+/FontBBox[-1021 -463 1793 1232]def
+/FontType 3 def
+/Encoding [ /period /zero /one /two /three /five /equal /t /minus ] def
+/FontInfo 10 dict dup begin
+/FamilyName (DejaVu Sans) def
+/FullName (DejaVu Sans) def
+/Notice (Copyright (c) 2003 by Bitstream, Inc. All Rights Reserved. Copyright (c) 2006 by Tavmjong Bah. All Rights Reserved. DejaVu changes are in public domain ) def
+/Weight (Book) def
+/Version (Version 2.35) def
+/ItalicAngle 0.0 def
+/isFixedPitch false def
+/UnderlinePosition -130 def
+/UnderlineThickness 90 def
+end readonly def
+/CharStrings 10 dict dup begin
+/.notdef 0 def
+/period{318 0 107 0 210 124 _sc
+107 124 _m
+210 124 _l
+210 0 _l
+107 0 _l
+107 124 _l
+_cl}_d
+/zero{636 0 66 -13 570 742 _sc
+318 664 _m
+267 664 229 639 203 589 _c
+177 539 165 464 165 364 _c
+165 264 177 189 203 139 _c
+229 89 267 64 318 64 _c
+369 64 407 89 433 139 _c
+458 189 471 264 471 364 _c
+471 464 458 539 433 589 _c
+407 639 369 664 318 664 _c
+318 742 _m
+399 742 461 709 505 645 _c
+548 580 570 486 570 364 _c
+570 241 548 147 505 83 _c
+461 19 399 -13 318 -13 _c
+236 -13 173 19 130 83 _c
+87 147 66 241 66 364 _c
+66 486 87 580 130 645 _c
+173 709 236 742 318 742 _c
+_cl}_d
+/one{636 0 110 0 544 729 _sc
+124 83 _m
+285 83 _l
+285 639 _l
+110 604 _l
+110 694 _l
+284 729 _l
+383 729 _l
+383 83 _l
+544 83 _l
+544 0 _l
+124 0 _l
+124 83 _l
+_cl}_d
+/two{{636 0 73 0 536 742 _sc
+192 83 _m
+536 83 _l
+536 0 _l
+73 0 _l
+73 83 _l
+110 121 161 173 226 239 _c
+290 304 331 346 348 365 _c
+380 400 402 430 414 455 _c
+426 479 433 504 433 528 _c
+433 566 419 598 392 622 _c
+365 646 330 659 286 659 _c
+255 659 222 653 188 643 _c
+154 632 117 616 78 594 _c
+78 694 _l
+118 710 155 722 189 730 _c
+223 738 255 742 284 742 _c
+}_e{359 742 419 723 464 685 _c
+509 647 532 597 532 534 _c
+532 504 526 475 515 449 _c
+504 422 484 390 454 354 _c
+446 344 420 317 376 272 _c
+332 227 271 164 192 83 _c
+_cl}_e}_d
+/three{{636 0 76 -13 556 742 _sc
+406 393 _m
+453 383 490 362 516 330 _c
+542 298 556 258 556 212 _c
+556 140 531 84 482 45 _c
+432 6 362 -13 271 -13 _c
+240 -13 208 -10 176 -4 _c
+144 1 110 10 76 22 _c
+76 117 _l
+103 101 133 89 166 81 _c
+198 73 232 69 268 69 _c
+330 69 377 81 409 105 _c
+441 129 458 165 458 212 _c
+458 254 443 288 413 312 _c
+383 336 341 349 287 349 _c
+}_e{202 349 _l
+202 430 _l
+291 430 _l
+339 430 376 439 402 459 _c
+428 478 441 506 441 543 _c
+441 580 427 609 401 629 _c
+374 649 336 659 287 659 _c
+260 659 231 656 200 650 _c
+169 644 135 635 98 623 _c
+98 711 _l
+135 721 170 729 203 734 _c
+235 739 266 742 296 742 _c
+370 742 429 725 473 691 _c
+517 657 539 611 539 553 _c
+539 513 527 479 504 451 _c
+481 423 448 403 406 393 _c
+_cl}_e}_d
+/five{{636 0 77 -13 549 729 _sc
+108 729 _m
+495 729 _l
+495 646 _l
+198 646 _l
+198 467 _l
+212 472 227 476 241 478 _c
+255 480 270 482 284 482 _c
+365 482 429 459 477 415 _c
+525 370 549 310 549 234 _c
+549 155 524 94 475 51 _c
+426 8 357 -13 269 -13 _c
+238 -13 207 -10 175 -6 _c
+143 -1 111 6 77 17 _c
+77 116 _l
+106 100 136 88 168 80 _c
+199 72 232 69 267 69 _c
+}_e{323 69 368 83 401 113 _c
+433 143 450 183 450 234 _c
+450 284 433 324 401 354 _c
+368 384 323 399 267 399 _c
+241 399 214 396 188 390 _c
+162 384 135 375 108 363 _c
+108 729 _l
+_cl}_e}_d
+/equal{838 0 106 172 732 454 _sc
+106 454 _m
+732 454 _l
+732 372 _l
+106 372 _l
+106 454 _l
+106 255 _m
+732 255 _l
+732 172 _l
+106 172 _l
+106 255 _l
+_cl}_d
+/t{392 0 27 0 368 702 _sc
+183 702 _m
+183 547 _l
+368 547 _l
+368 477 _l
+183 477 _l
+183 180 _l
+183 135 189 106 201 94 _c
+213 81 238 75 276 75 _c
+368 75 _l
+368 0 _l
+276 0 _l
+206 0 158 13 132 39 _c
+106 65 93 112 93 180 _c
+93 477 _l
+27 477 _l
+27 547 _l
+93 547 _l
+93 702 _l
+183 702 _l
+_cl}_d
+/minus{838 0 106 272 732 355 _sc
+106 355 _m
+732 355 _l
+732 272 _l
+106 272 _l
+106 355 _l
+_cl}_d
+end readonly def
+
+/BuildGlyph
+ {exch begin
+ CharStrings exch
+ 2 copy known not{pop /.notdef}if
+ true 3 1 roll get exec
+ end}_d
+
+/BuildChar {
+ 1 index /Encoding get exch get
+ 1 index /BuildGlyph get exec
+}_d
+
+FontName currentdict end definefont pop
+end
+%%EndProlog
+mpldict begin
+75.6 223.2 translate
+460.8 345.6 0 0 clipbox
+gsave
+0 0 m
+460.8 0 l
+460.8 345.6 l
+0 345.6 l
+cl
+1.000 setgray
+fill
+grestore
+gsave
+33.64 195.28 m
+222.48 195.28 l
+222.48 320.16 l
+33.64 320.16 l
+cl
+1.000 setgray
+fill
+grestore
+1.000 setlinewidth
+1 setlinejoin
+0 setlinecap
+[] 0 setdash
+1.000 0.000 0.000 setrgbcolor
+gsave
+188.8 124.9 33.64 195.3 clipbox
+/o {
+gsave
+newpath
+translate
+1.0 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 -1.581139 m
+0.419323 -1.581139 0.821528 -1.41454 1.118034 -1.118034 c
+1.41454 -0.821528 1.581139 -0.419323 1.581139 0 c
+1.581139 0.419323 1.41454 0.821528 1.118034 1.118034 c
+0.821528 1.41454 0.419323 1.581139 0 1.581139 c
+-0.419323 1.581139 -0.821528 1.41454 -1.118034 1.118034 c
+-1.41454 0.821528 -1.581139 0.419323 -1.581139 0 c
+-1.581139 -0.419323 -1.41454 -0.821528 -1.118034 -1.118034 c
+-0.821528 -1.41454 -0.419323 -1.581139 0 -1.581139 c
+cl
+
+gsave
+1.000 0.000 0.000 setrgbcolor
+fill
+grestore
+stroke
+grestore
+} bind def
+125.693 207.915 o
+78.5643 212.029 o
+80.3344 207.977 o
+68.8499 205.77 o
+109.699 208.201 o
+42.9626 217.401 o
+128.232 201.963 o
+75.4245 220.851 o
+86.203 227.942 o
+122.268 214.893 o
+48.0515 205.176 o
+84.6647 207.139 o
+115.357 218.288 o
+68.281 208.676 o
+87.8256 220.244 o
+92.3456 219.252 o
+103.746 226.195 o
+68.2704 221.767 o
+115.578 212.658 o
+110.457 201.614 o
+102.049 212.693 o
+110.447 214.655 o
+77.0576 225.769 o
+88.8687 229.297 o
+71.7368 230.582 o
+85.8132 221.564 o
+grestore
+1.500 setlinewidth
+0.000 1.000 1.000 setrgbcolor
+gsave
+188.8 124.9 33.64 195.3 clipbox
+/o {
+gsave
+newpath
+translate
+1.5 setlinewidth
+1 setlinejoin
+0 setlinecap
+-5 -5 m
+5 5 l
+-5 5 m
+5 -5 l
+
+gsave
+0.000 1.000 1.000 setrgbcolor
+fill
+grestore
+stroke
+grestore
+} bind def
+100.203 202.185 o
+grestore
+1.000 setlinewidth
+0.031 1.000 0.000 setrgbcolor
+gsave
+188.8 124.9 33.64 195.3 clipbox
+/o {
+gsave
+newpath
+translate
+1.0 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 -1.581139 m
+0.419323 -1.581139 0.821528 -1.41454 1.118034 -1.118034 c
+1.41454 -0.821528 1.581139 -0.419323 1.581139 0 c
+1.581139 0.419323 1.41454 0.821528 1.118034 1.118034 c
+0.821528 1.41454 0.419323 1.581139 0 1.581139 c
+-0.419323 1.581139 -0.821528 1.41454 -1.118034 1.118034 c
+-1.41454 0.821528 -1.581139 0.419323 -1.581139 0 c
+-1.581139 -0.419323 -1.41454 -0.821528 -1.118034 -1.118034 c
+-0.821528 -1.41454 -0.419323 -1.581139 0 -1.581139 c
+cl
+
+gsave
+0.031 1.000 0.000 setrgbcolor
+fill
+grestore
+stroke
+grestore
+} bind def
+183.747 253.794 o
+179.912 250.099 o
+192.176 252.809 o
+213.227 248.171 o
+154.119 244.853 o
+170.313 245.838 o
+168.227 252.733 o
+157.101 246.495 o
+147.903 243.337 o
+156.079 241.214 o
+179.838 255.359 o
+grestore
+1.500 setlinewidth
+0.333 0.667 1.000 setrgbcolor
+gsave
+188.8 124.9 33.64 195.3 clipbox
+/o {
+gsave
+newpath
+translate
+1.5 setlinewidth
+1 setlinejoin
+0 setlinecap
+-5 -5 m
+5 5 l
+-5 5 m
+5 -5 l
+
+gsave
+0.333 0.667 1.000 setrgbcolor
+fill
+grestore
+stroke
+grestore
+} bind def
+144.129 231.383 o
+grestore
+1.000 setlinewidth
+0.000 0.063 1.000 setrgbcolor
+gsave
+188.8 124.9 33.64 195.3 clipbox
+/o {
+gsave
+newpath
+translate
+1.0 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 -1.581139 m
+0.419323 -1.581139 0.821528 -1.41454 1.118034 -1.118034 c
+1.41454 -0.821528 1.581139 -0.419323 1.581139 0 c
+1.581139 0.419323 1.41454 0.821528 1.118034 1.118034 c
+0.821528 1.41454 0.419323 1.581139 0 1.581139 c
+-0.419323 1.581139 -0.821528 1.41454 -1.118034 1.118034 c
+-1.41454 0.821528 -1.581139 0.419323 -1.581139 0 c
+-1.581139 -0.419323 -1.41454 -0.821528 -1.118034 -1.118034 c
+-0.821528 -1.41454 -0.419323 -1.581139 0 -1.581139 c
+cl
+
+gsave
+0.000 0.063 1.000 setrgbcolor
+fill
+grestore
+stroke
+grestore
+} bind def
+98.1827 240.767 o
+83.3688 241.221 o
+72.959 246.921 o
+102.639 229.939 o
+120.298 260.877 o
+160.357 249.883 o
+134.722 248.038 o
+159.587 255.457 o
+141.75 253.04 o
+100.005 257.378 o
+98.4987 249.38 o
+128.2 261.059 o
+149.199 255.317 o
+171.841 256.651 o
+80.2185 253.683 o
+134.459 257.678 o
+151.411 250.644 o
+137.114 242.911 o
+137.799 254.702 o
+150.042 258.412 o
+150.41 254.954 o
+122.943 252.23 o
+147.987 260.333 o
+91.0707 284.181 o
+79.207 261.918 o
+111.595 298.312 o
+122.553 310.341 o
+62.0962 292.053 o
+110.995 286.381 o
+117.179 285.997 o
+96.8024 286.178 o
+72.506 287.61 o
+105.105 275.672 o
+88.6053 282.008 o
+81.9148 276.979 o
+72.0213 290.034 o
+100.163 284.32 o
+103.988 292.619 o
+81.6092 285.599 o
+99.6893 297.767 o
+73.37 289.664 o
+104.136 310.383 o
+92.1981 267.555 o
+88.5104 280.653 o
+89.8485 296.873 o
+105.189 313.917 o
+103.324 284.823 o
+99.8263 287.89 o
+93.6416 285.061 o
+92.6933 301.378 o
+101.238 284.418 o
+95.1377 294.554 o
+102.25 284.076 o
+grestore
+1.500 setlinewidth
+0.667 0.333 1.000 setrgbcolor
+gsave
+188.8 124.9 33.64 195.3 clipbox
+/o {
+gsave
+newpath
+translate
+1.5 setlinewidth
+1 setlinejoin
+0 setlinecap
+-5 -5 m
+5 5 l
+-5 5 m
+5 -5 l
+
+gsave
+0.667 0.333 1.000 setrgbcolor
+fill
+grestore
+stroke
+grestore
+} bind def
+128.679 246.052 o
+grestore
+0.800 setlinewidth
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 33.64 195.3 clipbox
+38.779689 195.28 m
+38.779689 320.16 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+0 -3.5 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+38.7797 195.28 o
+grestore
+/DejaVuSans findfont
+10.000 scalefont
+setfont
+gsave
+26.639064 180.686250 translate
+0.000000 rotate
+0.000000 0.000000 m /minus glyphshow
+8.378906 0.000000 m /zero glyphshow
+14.741211 0.000000 m /period glyphshow
+17.919922 0.000000 m /five glyphshow
+grestore
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 33.64 195.3 clipbox
+91.46057 195.28 m
+91.46057 320.16 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+0 -3.5 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+91.4606 195.28 o
+grestore
+gsave
+83.507445 180.686250 translate
+0.000000 rotate
+0.000000 0.000000 m /zero glyphshow
+6.362305 0.000000 m /period glyphshow
+9.541016 0.000000 m /zero glyphshow
+grestore
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 33.64 195.3 clipbox
+144.141451 195.28 m
+144.141451 320.16 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+0 -3.5 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+144.141 195.28 o
+grestore
+gsave
+136.188326 180.686250 translate
+0.000000 rotate
+0.000000 0.000000 m /zero glyphshow
+6.362305 0.000000 m /period glyphshow
+9.541016 0.000000 m /five glyphshow
+grestore
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 33.64 195.3 clipbox
+196.822333 195.28 m
+196.822333 320.16 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+0 -3.5 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+196.822 195.28 o
+grestore
+gsave
+188.869208 180.686250 translate
+0.000000 rotate
+0.000000 0.000000 m /one glyphshow
+6.362305 0.000000 m /period glyphshow
+9.541016 0.000000 m /zero glyphshow
+grestore
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 33.64 195.3 clipbox
+33.64 217.575304 m
+222.48 217.575304 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+-3.5 0 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+33.64 217.575 o
+grestore
+gsave
+10.733750 213.778429 translate
+0.000000 rotate
+0.000000 0.000000 m /zero glyphshow
+6.362305 0.000000 m /period glyphshow
+9.541016 0.000000 m /zero glyphshow
+grestore
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 33.64 195.3 clipbox
+33.64 252.502027 m
+222.48 252.502027 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+-3.5 0 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+33.64 252.502 o
+grestore
+gsave
+10.733750 248.705152 translate
+0.000000 rotate
+0.000000 0.000000 m /zero glyphshow
+6.362305 0.000000 m /period glyphshow
+9.541016 0.000000 m /five glyphshow
+grestore
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 33.64 195.3 clipbox
+33.64 287.42875 m
+222.48 287.42875 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+-3.5 0 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+33.64 287.429 o
+grestore
+gsave
+10.733750 283.631875 translate
+0.000000 rotate
+0.000000 0.000000 m /one glyphshow
+6.362305 0.000000 m /period glyphshow
+9.541016 0.000000 m /zero glyphshow
+grestore
+0 setlinejoin
+2 setlinecap
+[] 0 setdash
+gsave
+33.64 195.28 m
+33.64 320.16 l
+stroke
+grestore
+gsave
+222.48 195.28 m
+222.48 320.16 l
+stroke
+grestore
+gsave
+33.64 195.28 m
+222.48 195.28 l
+stroke
+grestore
+gsave
+33.64 320.16 m
+222.48 320.16 l
+stroke
+grestore
+/DejaVuSans findfont
+12.000 scalefont
+setfont
+gsave
+116.856875 326.160000 translate
+0.000000 rotate
+0.000000 0.000000 m /t glyphshow
+4.705078 0.000000 m /equal glyphshow
+14.759766 0.000000 m /zero glyphshow
+grestore
+gsave
+258.64 195.28 m
+447.48 195.28 l
+447.48 320.16 l
+258.64 320.16 l
+cl
+1.000 setgray
+fill
+grestore
+1.000 setlinewidth
+1 setlinejoin
+0 setlinecap
+[] 0 setdash
+1.000 0.000 0.000 setrgbcolor
+gsave
+188.8 124.9 258.6 195.3 clipbox
+/o {
+gsave
+newpath
+translate
+1.0 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 -1.581139 m
+0.419323 -1.581139 0.821528 -1.41454 1.118034 -1.118034 c
+1.41454 -0.821528 1.581139 -0.419323 1.581139 0 c
+1.581139 0.419323 1.41454 0.821528 1.118034 1.118034 c
+0.821528 1.41454 0.419323 1.581139 0 1.581139 c
+-0.419323 1.581139 -0.821528 1.41454 -1.118034 1.118034 c
+-1.41454 0.821528 -1.581139 0.419323 -1.581139 0 c
+-1.581139 -0.419323 -1.41454 -0.821528 -1.118034 -1.118034 c
+-0.821528 -1.41454 -0.419323 -1.581139 0 -1.581139 c
+cl
+
+gsave
+1.000 0.000 0.000 setrgbcolor
+fill
+grestore
+stroke
+grestore
+} bind def
+350.693 207.911 o
+303.564 212.024 o
+305.334 207.974 o
+293.85 205.768 o
+334.699 208.198 o
+267.963 217.393 o
+353.232 201.963 o
+300.425 220.842 o
+323.183 240.748 o
+311.203 227.929 o
+347.268 214.886 o
+273.052 205.174 o
+309.665 207.136 o
+308.369 241.202 o
+340.357 218.28 o
+293.281 208.672 o
+312.826 220.235 o
+297.959 246.899 o
+317.346 219.243 o
+328.746 226.183 o
+293.27 221.757 o
+340.578 212.652 o
+335.457 201.613 o
+327.049 212.687 o
+335.447 214.649 o
+302.058 225.757 o
+313.869 229.283 o
+296.737 230.568 o
+310.813 221.554 o
+327.639 229.926 o
+grestore
+1.500 setlinewidth
+0.000 1.000 1.000 setrgbcolor
+gsave
+188.8 124.9 258.6 195.3 clipbox
+/o {
+gsave
+newpath
+translate
+1.5 setlinewidth
+1 setlinejoin
+0 setlinecap
+-5 -5 m
+5 5 l
+-5 5 m
+5 -5 l
+
+gsave
+0.000 1.000 1.000 setrgbcolor
+fill
+grestore
+stroke
+grestore
+} bind def
+315.338 215.397 o
+grestore
+1.000 setlinewidth
+0.031 1.000 0.000 setrgbcolor
+gsave
+188.8 124.9 258.6 195.3 clipbox
+/o {
+gsave
+newpath
+translate
+1.0 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 -1.581139 m
+0.419323 -1.581139 0.821528 -1.41454 1.118034 -1.118034 c
+1.41454 -0.821528 1.581139 -0.419323 1.581139 0 c
+1.581139 0.419323 1.41454 0.821528 1.118034 1.118034 c
+0.821528 1.41454 0.419323 1.581139 0 1.581139 c
+-0.419323 1.581139 -0.821528 1.41454 -1.118034 1.118034 c
+-1.41454 0.821528 -1.581139 0.419323 -1.581139 0 c
+-1.581139 -0.419323 -1.41454 -0.821528 -1.118034 -1.118034 c
+-0.821528 -1.41454 -0.419323 -1.581139 0 -1.581139 c
+cl
+
+gsave
+0.031 1.000 0.000 setrgbcolor
+fill
+grestore
+stroke
+grestore
+} bind def
+408.747 253.77 o
+385.357 249.86 o
+359.722 248.016 o
+384.587 255.431 o
+366.75 253.015 o
+404.912 250.076 o
+417.176 252.785 o
+438.227 248.149 o
+374.199 255.292 o
+396.841 256.625 o
+379.119 244.832 o
+395.313 245.817 o
+376.411 250.621 o
+393.227 252.708 o
+362.114 242.891 o
+362.799 254.677 o
+375.042 258.385 o
+382.101 246.473 o
+375.41 254.929 o
+372.903 243.317 o
+381.079 241.195 o
+372.987 260.305 o
+404.838 255.334 o
+grestore
+1.500 setlinewidth
+0.333 0.667 1.000 setrgbcolor
+gsave
+188.8 124.9 258.6 195.3 clipbox
+/o {
+gsave
+newpath
+translate
+1.5 setlinewidth
+1 setlinejoin
+0 setlinecap
+-5 -5 m
+5 5 l
+-5 5 m
+5 -5 l
+
+gsave
+0.333 0.667 1.000 setrgbcolor
+fill
+grestore
+stroke
+grestore
+} bind def
+397.967 248.587 o
+grestore
+1.000 setlinewidth
+0.000 0.063 1.000 setrgbcolor
+gsave
+188.8 124.9 258.6 195.3 clipbox
+/o {
+gsave
+newpath
+translate
+1.0 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 -1.581139 m
+0.419323 -1.581139 0.821528 -1.41454 1.118034 -1.118034 c
+1.41454 -0.821528 1.581139 -0.419323 1.581139 0 c
+1.581139 0.419323 1.41454 0.821528 1.118034 1.118034 c
+0.821528 1.41454 0.419323 1.581139 0 1.581139 c
+-0.419323 1.581139 -0.821528 1.41454 -1.118034 1.118034 c
+-1.41454 0.821528 -1.581139 0.419323 -1.581139 0 c
+-1.581139 -0.419323 -1.41454 -0.821528 -1.118034 -1.118034 c
+-0.821528 -1.41454 -0.419323 -1.581139 0 -1.581139 c
+cl
+
+gsave
+0.000 0.063 1.000 setrgbcolor
+fill
+grestore
+stroke
+grestore
+} bind def
+345.298 260.849 o
+325.005 257.351 o
+323.499 249.357 o
+353.2 261.031 o
+305.218 253.658 o
+359.459 257.652 o
+347.943 252.206 o
+316.071 284.142 o
+304.207 261.89 o
+336.595 298.266 o
+347.553 310.289 o
+287.096 292.01 o
+335.995 286.341 o
+342.179 285.957 o
+321.802 286.138 o
+297.506 287.57 o
+330.105 275.637 o
+313.605 281.97 o
+306.915 276.943 o
+297.021 289.993 o
+325.163 284.281 o
+328.988 292.576 o
+306.609 285.559 o
+324.689 297.722 o
+298.37 289.622 o
+329.136 310.331 o
+317.198 267.524 o
+313.51 280.616 o
+314.849 296.828 o
+330.189 313.864 o
+328.324 284.784 o
+324.826 287.849 o
+318.642 285.021 o
+317.693 301.331 o
+326.238 284.379 o
+320.138 294.51 o
+327.25 284.037 o
+grestore
+1.500 setlinewidth
+0.667 0.333 1.000 setrgbcolor
+gsave
+188.8 124.9 258.6 195.3 clipbox
+/o {
+gsave
+newpath
+translate
+1.5 setlinewidth
+1 setlinejoin
+0 setlinecap
+-5 -5 m
+5 5 l
+-5 5 m
+5 -5 l
+
+gsave
+0.667 0.333 1.000 setrgbcolor
+fill
+grestore
+stroke
+grestore
+} bind def
+333.914 272.621 o
+grestore
+0.800 setlinewidth
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 258.6 195.3 clipbox
+263.779689 195.28 m
+263.779689 320.16 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+0 -3.5 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+263.78 195.28 o
+grestore
+/DejaVuSans findfont
+10.000 scalefont
+setfont
+gsave
+251.639064 180.686250 translate
+0.000000 rotate
+0.000000 0.000000 m /minus glyphshow
+8.378906 0.000000 m /zero glyphshow
+14.741211 0.000000 m /period glyphshow
+17.919922 0.000000 m /five glyphshow
+grestore
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 258.6 195.3 clipbox
+316.46057 195.28 m
+316.46057 320.16 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+0 -3.5 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+316.461 195.28 o
+grestore
+gsave
+308.507445 180.686250 translate
+0.000000 rotate
+0.000000 0.000000 m /zero glyphshow
+6.362305 0.000000 m /period glyphshow
+9.541016 0.000000 m /zero glyphshow
+grestore
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 258.6 195.3 clipbox
+369.141451 195.28 m
+369.141451 320.16 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+0 -3.5 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+369.141 195.28 o
+grestore
+gsave
+361.188326 180.686250 translate
+0.000000 rotate
+0.000000 0.000000 m /zero glyphshow
+6.362305 0.000000 m /period glyphshow
+9.541016 0.000000 m /five glyphshow
+grestore
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 258.6 195.3 clipbox
+421.822333 195.28 m
+421.822333 320.16 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+0 -3.5 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+421.822 195.28 o
+grestore
+gsave
+413.869208 180.686250 translate
+0.000000 rotate
+0.000000 0.000000 m /one glyphshow
+6.362305 0.000000 m /period glyphshow
+9.541016 0.000000 m /zero glyphshow
+grestore
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 258.6 195.3 clipbox
+258.64 217.567514 m
+447.48 217.567514 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+-3.5 0 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+258.64 217.568 o
+grestore
+gsave
+235.733750 213.770639 translate
+0.000000 rotate
+0.000000 0.000000 m /zero glyphshow
+6.362305 0.000000 m /period glyphshow
+9.541016 0.000000 m /zero glyphshow
+grestore
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 258.6 195.3 clipbox
+258.64 252.477865 m
+447.48 252.477865 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+-3.5 0 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+258.64 252.478 o
+grestore
+gsave
+235.733750 248.680990 translate
+0.000000 rotate
+0.000000 0.000000 m /zero glyphshow
+6.362305 0.000000 m /period glyphshow
+9.541016 0.000000 m /five glyphshow
+grestore
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 258.6 195.3 clipbox
+258.64 287.388216 m
+447.48 287.388216 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+-3.5 0 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+258.64 287.388 o
+grestore
+gsave
+235.733750 283.591341 translate
+0.000000 rotate
+0.000000 0.000000 m /one glyphshow
+6.362305 0.000000 m /period glyphshow
+9.541016 0.000000 m /zero glyphshow
+grestore
+0 setlinejoin
+2 setlinecap
+[] 0 setdash
+gsave
+258.64 195.28 m
+258.64 320.16 l
+stroke
+grestore
+gsave
+447.48 195.28 m
+447.48 320.16 l
+stroke
+grestore
+gsave
+258.64 195.28 m
+447.48 195.28 l
+stroke
+grestore
+gsave
+258.64 320.16 m
+447.48 320.16 l
+stroke
+grestore
+/DejaVuSans findfont
+12.000 scalefont
+setfont
+gsave
+341.856875 326.160000 translate
+0.000000 rotate
+0.000000 0.000000 m /t glyphshow
+4.705078 0.000000 m /equal glyphshow
+14.759766 0.000000 m /one glyphshow
+grestore
+gsave
+33.64 27.88 m
+222.48 27.88 l
+222.48 152.76 l
+33.64 152.76 l
+cl
+1.000 setgray
+fill
+grestore
+1.000 setlinewidth
+1 setlinejoin
+0 setlinecap
+[] 0 setdash
+1.000 0.000 0.000 setrgbcolor
+gsave
+188.8 124.9 33.64 27.88 clipbox
+/o {
+gsave
+newpath
+translate
+1.0 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 -1.581139 m
+0.419323 -1.581139 0.821528 -1.41454 1.118034 -1.118034 c
+1.41454 -0.821528 1.581139 -0.419323 1.581139 0 c
+1.581139 0.419323 1.41454 0.821528 1.118034 1.118034 c
+0.821528 1.41454 0.419323 1.581139 0 1.581139 c
+-0.419323 1.581139 -0.821528 1.41454 -1.118034 1.118034 c
+-1.41454 0.821528 -1.581139 0.419323 -1.581139 0 c
+-1.581139 -0.419323 -1.41454 -0.821528 -1.118034 -1.118034 c
+-0.821528 -1.41454 -0.419323 -1.581139 0 -1.581139 c
+cl
+
+gsave
+1.000 0.000 0.000 setrgbcolor
+fill
+grestore
+stroke
+grestore
+} bind def
+125.693 40.5108 o
+78.5643 44.623 o
+80.3344 40.5737 o
+68.8499 38.3675 o
+109.699 40.7971 o
+42.9626 49.9918 o
+128.232 34.5625 o
+75.4245 53.4407 o
+98.1827 73.3453 o
+86.203 60.5271 o
+122.268 47.4854 o
+48.0515 37.7741 o
+84.6647 39.7359 o
+83.3688 73.7991 o
+115.357 50.8785 o
+68.281 41.2718 o
+87.8256 52.8333 o
+72.959 79.496 o
+92.3456 51.842 o
+103.746 58.7817 o
+68.2704 54.3553 o
+115.578 45.2513 o
+110.457 34.2134 o
+102.049 45.2862 o
+110.447 47.2481 o
+77.0576 58.3558 o
+88.8687 61.8815 o
+71.7368 63.1661 o
+85.8132 54.1529 o
+102.639 62.5238 o
+98.4987 81.9536 o
+grestore
+1.500 setlinewidth
+0.000 1.000 1.000 setrgbcolor
+gsave
+188.8 124.9 33.64 27.88 clipbox
+/o {
+gsave
+newpath
+translate
+1.5 setlinewidth
+1 setlinejoin
+0 setlinecap
+-5 -5 m
+5 5 l
+-5 5 m
+5 -5 l
+
+gsave
+0.000 1.000 1.000 setrgbcolor
+fill
+grestore
+stroke
+grestore
+} bind def
+90.1976 51.2357 o
+grestore
+1.000 setlinewidth
+0.031 1.000 0.000 setrgbcolor
+gsave
+188.8 124.9 33.64 27.88 clipbox
+/o {
+gsave
+newpath
+translate
+1.0 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 -1.581139 m
+0.419323 -1.581139 0.821528 -1.41454 1.118034 -1.118034 c
+1.41454 -0.821528 1.581139 -0.419323 1.581139 0 c
+1.581139 0.419323 1.41454 0.821528 1.118034 1.118034 c
+0.821528 1.41454 0.419323 1.581139 0 1.581139 c
+-0.419323 1.581139 -0.821528 1.41454 -1.118034 1.118034 c
+-1.41454 0.821528 -1.581139 0.419323 -1.581139 0 c
+-1.581139 -0.419323 -1.41454 -0.821528 -1.118034 -1.118034 c
+-0.821528 -1.41454 -0.419323 -1.581139 0 -1.581139 c
+cl
+
+gsave
+0.031 1.000 0.000 setrgbcolor
+fill
+grestore
+stroke
+grestore
+} bind def
+183.747 86.3659 o
+160.357 82.4562 o
+134.722 80.6131 o
+159.587 88.0275 o
+141.75 85.6119 o
+179.912 82.6727 o
+192.176 85.3815 o
+213.227 80.7457 o
+128.2 93.6268 o
+149.199 87.8879 o
+171.841 89.2214 o
+154.119 77.4295 o
+134.459 90.2477 o
+170.313 78.4139 o
+151.411 83.2172 o
+168.227 85.3047 o
+137.114 75.4886 o
+137.799 87.2735 o
+150.042 90.9808 o
+157.101 79.0702 o
+150.41 87.5249 o
+147.903 75.9145 o
+122.943 84.8021 o
+156.079 73.7921 o
+147.987 92.9007 o
+179.838 87.9298 o
+grestore
+1.500 setlinewidth
+0.333 0.667 1.000 setrgbcolor
+gsave
+188.8 124.9 33.64 27.88 clipbox
+/o {
+gsave
+newpath
+translate
+1.5 setlinewidth
+1 setlinejoin
+0 setlinecap
+-5 -5 m
+5 5 l
+-5 5 m
+5 -5 l
+
+gsave
+0.333 0.667 1.000 setrgbcolor
+fill
+grestore
+stroke
+grestore
+} bind def
+160.646 83.6619 o
+grestore
+1.000 setlinewidth
+0.000 0.063 1.000 setrgbcolor
+gsave
+188.8 124.9 33.64 27.88 clipbox
+/o {
+gsave
+newpath
+translate
+1.0 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 -1.581139 m
+0.419323 -1.581139 0.821528 -1.41454 1.118034 -1.118034 c
+1.41454 -0.821528 1.581139 -0.419323 1.581139 0 c
+1.581139 0.419323 1.41454 0.821528 1.118034 1.118034 c
+0.821528 1.41454 0.419323 1.581139 0 1.581139 c
+-0.419323 1.581139 -0.821528 1.41454 -1.118034 1.118034 c
+-1.41454 0.821528 -1.581139 0.419323 -1.581139 0 c
+-1.581139 -0.419323 -1.41454 -0.821528 -1.118034 -1.118034 c
+-0.821528 -1.41454 -0.419323 -1.581139 0 -1.581139 c
+cl
+
+gsave
+0.000 0.063 1.000 setrgbcolor
+fill
+grestore
+stroke
+grestore
+} bind def
+120.298 93.4453 o
+100.005 89.9475 o
+80.2185 86.2542 o
+91.0707 116.736 o
+79.207 94.4855 o
+111.595 130.86 o
+122.553 142.882 o
+62.0962 124.604 o
+110.995 118.935 o
+117.179 118.551 o
+96.8024 118.733 o
+72.506 120.164 o
+105.105 108.232 o
+88.6053 114.565 o
+81.9148 109.538 o
+72.0213 122.586 o
+100.163 116.875 o
+103.988 125.17 o
+81.6092 118.153 o
+99.6893 130.315 o
+73.37 122.216 o
+104.136 142.924 o
+92.1981 100.12 o
+88.5104 113.21 o
+89.8485 129.421 o
+105.189 146.456 o
+103.324 117.378 o
+99.8263 120.443 o
+93.6416 117.616 o
+92.6933 133.925 o
+101.238 116.973 o
+95.1377 127.104 o
+102.25 116.631 o
+grestore
+1.500 setlinewidth
+0.667 0.333 1.000 setrgbcolor
+gsave
+188.8 124.9 33.64 27.88 clipbox
+/o {
+gsave
+newpath
+translate
+1.5 setlinewidth
+1 setlinejoin
+0 setlinecap
+-5 -5 m
+5 5 l
+-5 5 m
+5 -5 l
+
+gsave
+0.667 0.333 1.000 setrgbcolor
+fill
+grestore
+stroke
+grestore
+} bind def
+97.9212 115.029 o
+grestore
+0.800 setlinewidth
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 33.64 27.88 clipbox
+38.779689 27.88 m
+38.779689 152.76 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+0 -3.5 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+38.7797 27.88 o
+grestore
+/DejaVuSans findfont
+10.000 scalefont
+setfont
+gsave
+26.639064 13.286250 translate
+0.000000 rotate
+0.000000 0.000000 m /minus glyphshow
+8.378906 0.000000 m /zero glyphshow
+14.741211 0.000000 m /period glyphshow
+17.919922 0.000000 m /five glyphshow
+grestore
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 33.64 27.88 clipbox
+91.46057 27.88 m
+91.46057 152.76 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+0 -3.5 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+91.4606 27.88 o
+grestore
+gsave
+83.507445 13.286250 translate
+0.000000 rotate
+0.000000 0.000000 m /zero glyphshow
+6.362305 0.000000 m /period glyphshow
+9.541016 0.000000 m /zero glyphshow
+grestore
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 33.64 27.88 clipbox
+144.141451 27.88 m
+144.141451 152.76 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+0 -3.5 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+144.141 27.88 o
+grestore
+gsave
+136.188326 13.286250 translate
+0.000000 rotate
+0.000000 0.000000 m /zero glyphshow
+6.362305 0.000000 m /period glyphshow
+9.541016 0.000000 m /five glyphshow
+grestore
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 33.64 27.88 clipbox
+196.822333 27.88 m
+196.822333 152.76 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+0 -3.5 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+196.822 27.88 o
+grestore
+gsave
+188.869208 13.286250 translate
+0.000000 rotate
+0.000000 0.000000 m /one glyphshow
+6.362305 0.000000 m /period glyphshow
+9.541016 0.000000 m /zero glyphshow
+grestore
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 33.64 27.88 clipbox
+33.64 50.166376 m
+222.48 50.166376 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+-3.5 0 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+33.64 50.1664 o
+grestore
+gsave
+10.733750 46.369501 translate
+0.000000 rotate
+0.000000 0.000000 m /zero glyphshow
+6.362305 0.000000 m /period glyphshow
+9.541016 0.000000 m /zero glyphshow
+grestore
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 33.64 27.88 clipbox
+33.64 85.074334 m
+222.48 85.074334 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+-3.5 0 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+33.64 85.0743 o
+grestore
+gsave
+10.733750 81.277459 translate
+0.000000 rotate
+0.000000 0.000000 m /zero glyphshow
+6.362305 0.000000 m /period glyphshow
+9.541016 0.000000 m /five glyphshow
+grestore
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 33.64 27.88 clipbox
+33.64 119.982293 m
+222.48 119.982293 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+-3.5 0 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+33.64 119.982 o
+grestore
+gsave
+10.733750 116.185418 translate
+0.000000 rotate
+0.000000 0.000000 m /one glyphshow
+6.362305 0.000000 m /period glyphshow
+9.541016 0.000000 m /zero glyphshow
+grestore
+0 setlinejoin
+2 setlinecap
+[] 0 setdash
+gsave
+33.64 27.88 m
+33.64 152.76 l
+stroke
+grestore
+gsave
+222.48 27.88 m
+222.48 152.76 l
+stroke
+grestore
+gsave
+33.64 27.88 m
+222.48 27.88 l
+stroke
+grestore
+gsave
+33.64 152.76 m
+222.48 152.76 l
+stroke
+grestore
+/DejaVuSans findfont
+12.000 scalefont
+setfont
+gsave
+116.856875 158.760000 translate
+0.000000 rotate
+0.000000 0.000000 m /t glyphshow
+4.705078 0.000000 m /equal glyphshow
+14.759766 0.000000 m /two glyphshow
+grestore
+gsave
+258.64 27.88 m
+447.48 27.88 l
+447.48 152.76 l
+258.64 152.76 l
+cl
+1.000 setgray
+fill
+grestore
+1.000 setlinewidth
+1 setlinejoin
+0 setlinecap
+[] 0 setdash
+1.000 0.000 0.000 setrgbcolor
+gsave
+188.8 124.9 258.6 27.88 clipbox
+/o {
+gsave
+newpath
+translate
+1.0 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 -1.581139 m
+0.419323 -1.581139 0.821528 -1.41454 1.118034 -1.118034 c
+1.41454 -0.821528 1.581139 -0.419323 1.581139 0 c
+1.581139 0.419323 1.41454 0.821528 1.118034 1.118034 c
+0.821528 1.41454 0.419323 1.581139 0 1.581139 c
+-0.419323 1.581139 -0.821528 1.41454 -1.118034 1.118034 c
+-1.41454 0.821528 -1.581139 0.419323 -1.581139 0 c
+-1.581139 -0.419323 -1.41454 -0.821528 -1.118034 -1.118034 c
+-0.821528 -1.41454 -0.419323 -1.581139 0 -1.581139 c
+cl
+
+gsave
+1.000 0.000 0.000 setrgbcolor
+fill
+grestore
+stroke
+grestore
+} bind def
+350.693 40.5108 o
+303.564 44.623 o
+305.334 40.5737 o
+293.85 38.3675 o
+334.699 40.7971 o
+267.963 49.9918 o
+353.232 34.5625 o
+300.425 53.4407 o
+323.183 73.3453 o
+311.203 60.5271 o
+347.268 47.4854 o
+273.052 37.7741 o
+309.665 39.7359 o
+308.369 73.7991 o
+340.357 50.8785 o
+293.281 41.2718 o
+312.826 52.8333 o
+297.959 79.496 o
+317.346 51.842 o
+328.746 58.7817 o
+293.27 54.3553 o
+340.578 45.2513 o
+335.457 34.2134 o
+327.049 45.2862 o
+335.447 47.2481 o
+302.058 58.3558 o
+313.869 61.8815 o
+296.737 63.1661 o
+310.813 54.1529 o
+327.639 62.5238 o
+323.499 81.9536 o
+grestore
+1.500 setlinewidth
+0.000 1.000 1.000 setrgbcolor
+gsave
+188.8 124.9 258.6 27.88 clipbox
+/o {
+gsave
+newpath
+translate
+1.5 setlinewidth
+1 setlinejoin
+0 setlinecap
+-5 -5 m
+5 5 l
+-5 5 m
+5 -5 l
+
+gsave
+0.000 1.000 1.000 setrgbcolor
+fill
+grestore
+stroke
+grestore
+} bind def
+315.465 52.2266 o
+grestore
+1.000 setlinewidth
+0.031 1.000 0.000 setrgbcolor
+gsave
+188.8 124.9 258.6 27.88 clipbox
+/o {
+gsave
+newpath
+translate
+1.0 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 -1.581139 m
+0.419323 -1.581139 0.821528 -1.41454 1.118034 -1.118034 c
+1.41454 -0.821528 1.581139 -0.419323 1.581139 0 c
+1.581139 0.419323 1.41454 0.821528 1.118034 1.118034 c
+0.821528 1.41454 0.419323 1.581139 0 1.581139 c
+-0.419323 1.581139 -0.821528 1.41454 -1.118034 1.118034 c
+-1.41454 0.821528 -1.581139 0.419323 -1.581139 0 c
+-1.581139 -0.419323 -1.41454 -0.821528 -1.118034 -1.118034 c
+-0.821528 -1.41454 -0.419323 -1.581139 0 -1.581139 c
+cl
+
+gsave
+0.031 1.000 0.000 setrgbcolor
+fill
+grestore
+stroke
+grestore
+} bind def
+345.298 93.4453 o
+408.747 86.3659 o
+385.357 82.4562 o
+359.722 80.6131 o
+384.587 88.0275 o
+366.75 85.6119 o
+404.912 82.6727 o
+417.176 85.3815 o
+438.227 80.7457 o
+353.2 93.6268 o
+374.199 87.8879 o
+396.841 89.2214 o
+379.119 77.4295 o
+359.459 90.2477 o
+395.313 78.4139 o
+376.411 83.2172 o
+393.227 85.3047 o
+362.114 75.4886 o
+362.799 87.2735 o
+375.042 90.9808 o
+382.101 79.0702 o
+375.41 87.5249 o
+372.903 75.9145 o
+347.943 84.8021 o
+381.079 73.7921 o
+372.987 92.9007 o
+404.838 87.9298 o
+grestore
+1.500 setlinewidth
+0.333 0.667 1.000 setrgbcolor
+gsave
+188.8 124.9 258.6 27.88 clipbox
+/o {
+gsave
+newpath
+translate
+1.5 setlinewidth
+1 setlinejoin
+0 setlinecap
+-5 -5 m
+5 5 l
+-5 5 m
+5 -5 l
+
+gsave
+0.333 0.667 1.000 setrgbcolor
+fill
+grestore
+stroke
+grestore
+} bind def
+381.941 84.3423 o
+grestore
+1.000 setlinewidth
+0.000 0.063 1.000 setrgbcolor
+gsave
+188.8 124.9 258.6 27.88 clipbox
+/o {
+gsave
+newpath
+translate
+1.0 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 -1.581139 m
+0.419323 -1.581139 0.821528 -1.41454 1.118034 -1.118034 c
+1.41454 -0.821528 1.581139 -0.419323 1.581139 0 c
+1.581139 0.419323 1.41454 0.821528 1.118034 1.118034 c
+0.821528 1.41454 0.419323 1.581139 0 1.581139 c
+-0.419323 1.581139 -0.821528 1.41454 -1.118034 1.118034 c
+-1.41454 0.821528 -1.581139 0.419323 -1.581139 0 c
+-1.581139 -0.419323 -1.41454 -0.821528 -1.118034 -1.118034 c
+-0.821528 -1.41454 -0.419323 -1.581139 0 -1.581139 c
+cl
+
+gsave
+0.000 0.063 1.000 setrgbcolor
+fill
+grestore
+stroke
+grestore
+} bind def
+325.005 89.9475 o
+305.218 86.2542 o
+316.071 116.736 o
+304.207 94.4855 o
+336.595 130.86 o
+347.553 142.882 o
+287.096 124.604 o
+335.995 118.935 o
+342.179 118.551 o
+321.802 118.733 o
+297.506 120.164 o
+330.105 108.232 o
+313.605 114.565 o
+306.915 109.538 o
+297.021 122.586 o
+325.163 116.875 o
+328.988 125.17 o
+306.609 118.153 o
+324.689 130.315 o
+298.37 122.216 o
+329.136 142.924 o
+317.198 100.12 o
+313.51 113.21 o
+314.849 129.421 o
+330.189 146.456 o
+328.324 117.378 o
+324.826 120.443 o
+318.642 117.616 o
+317.693 133.925 o
+326.238 116.973 o
+320.138 127.104 o
+327.25 116.631 o
+grestore
+1.500 setlinewidth
+0.667 0.333 1.000 setrgbcolor
+gsave
+188.8 124.9 258.6 27.88 clipbox
+/o {
+gsave
+newpath
+translate
+1.5 setlinewidth
+1 setlinejoin
+0 setlinecap
+-5 -5 m
+5 5 l
+-5 5 m
+5 -5 l
+
+gsave
+0.667 0.333 1.000 setrgbcolor
+fill
+grestore
+stroke
+grestore
+} bind def
+320.121 118.347 o
+grestore
+0.800 setlinewidth
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 258.6 27.88 clipbox
+263.779689 27.88 m
+263.779689 152.76 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+0 -3.5 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+263.78 27.88 o
+grestore
+/DejaVuSans findfont
+10.000 scalefont
+setfont
+gsave
+251.639064 13.286250 translate
+0.000000 rotate
+0.000000 0.000000 m /minus glyphshow
+8.378906 0.000000 m /zero glyphshow
+14.741211 0.000000 m /period glyphshow
+17.919922 0.000000 m /five glyphshow
+grestore
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 258.6 27.88 clipbox
+316.46057 27.88 m
+316.46057 152.76 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+0 -3.5 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+316.461 27.88 o
+grestore
+gsave
+308.507445 13.286250 translate
+0.000000 rotate
+0.000000 0.000000 m /zero glyphshow
+6.362305 0.000000 m /period glyphshow
+9.541016 0.000000 m /zero glyphshow
+grestore
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 258.6 27.88 clipbox
+369.141451 27.88 m
+369.141451 152.76 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+0 -3.5 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+369.141 27.88 o
+grestore
+gsave
+361.188326 13.286250 translate
+0.000000 rotate
+0.000000 0.000000 m /zero glyphshow
+6.362305 0.000000 m /period glyphshow
+9.541016 0.000000 m /five glyphshow
+grestore
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 258.6 27.88 clipbox
+421.822333 27.88 m
+421.822333 152.76 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+0 -3.5 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+421.822 27.88 o
+grestore
+gsave
+413.869208 13.286250 translate
+0.000000 rotate
+0.000000 0.000000 m /one glyphshow
+6.362305 0.000000 m /period glyphshow
+9.541016 0.000000 m /zero glyphshow
+grestore
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 258.6 27.88 clipbox
+258.64 50.166376 m
+447.48 50.166376 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+-3.5 0 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+258.64 50.1664 o
+grestore
+gsave
+235.733750 46.369501 translate
+0.000000 rotate
+0.000000 0.000000 m /zero glyphshow
+6.362305 0.000000 m /period glyphshow
+9.541016 0.000000 m /zero glyphshow
+grestore
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 258.6 27.88 clipbox
+258.64 85.074334 m
+447.48 85.074334 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+-3.5 0 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+258.64 85.0743 o
+grestore
+gsave
+235.733750 81.277459 translate
+0.000000 rotate
+0.000000 0.000000 m /zero glyphshow
+6.362305 0.000000 m /period glyphshow
+9.541016 0.000000 m /five glyphshow
+grestore
+2 setlinecap
+0.690 setgray
+gsave
+188.8 124.9 258.6 27.88 clipbox
+258.64 119.982293 m
+447.48 119.982293 l
+stroke
+grestore
+0 setlinecap
+0.000 setgray
+gsave
+/o {
+gsave
+newpath
+translate
+0.8 setlinewidth
+1 setlinejoin
+0 setlinecap
+0 0 m
+-3.5 0 l
+
+gsave
+0.000 setgray
+fill
+grestore
+stroke
+grestore
+} bind def
+258.64 119.982 o
+grestore
+gsave
+235.733750 116.185418 translate
+0.000000 rotate
+0.000000 0.000000 m /one glyphshow
+6.362305 0.000000 m /period glyphshow
+9.541016 0.000000 m /zero glyphshow
+grestore
+0 setlinejoin
+2 setlinecap
+[] 0 setdash
+gsave
+258.64 27.88 m
+258.64 152.76 l
+stroke
+grestore
+gsave
+447.48 27.88 m
+447.48 152.76 l
+stroke
+grestore
+gsave
+258.64 27.88 m
+447.48 27.88 l
+stroke
+grestore
+gsave
+258.64 152.76 m
+447.48 152.76 l
+stroke
+grestore
+/DejaVuSans findfont
+12.000 scalefont
+setfont
+gsave
+341.856875 158.760000 translate
+0.000000 rotate
+0.000000 0.000000 m /t glyphshow
+4.705078 0.000000 m /equal glyphshow
+14.759766 0.000000 m /three glyphshow
+grestore
+
+end
+showpage
